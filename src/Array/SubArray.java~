@@ -1,0 +1,72 @@
+package Array;
+
+public class SubArray {
+
+    public static void main(String[] args) {
+        int array[] = {2,4,6,8,10,14};
+        int length = array.length;
+        int totalPairs = 0;
+
+        for (int i = 0; i < length ; i++) {
+            int start = i;
+
+            for (int j = i; j < length; j++) {
+                int end = j;
+                for (int k = start; k < end; k++) {
+                    System.out.print(array[k]+" ");
+                }
+                totalPairs++;
+                System.out.println();
+            }
+            System.out.println();
+
+            System.out.println("=======");
+        }
+        System.out.println("Total Pairs Found = " + totalPairs);
+    }
+}
+
+/*
+ * +-----------------------------------------+
+ * |                  START                  |
+ * +-----------------------------------------+
+ *                    |
+ *                    v
+ * +----------------------------------------------------------+
+ * | Initialize:                                              |
+ * | array[] = {2, 4, 6, 8, 10, 14}                           |
+ * | length = array.length                                    |
+ * | totalPairs = 0                                           |
+ * +----------------------------------------------------------+
+ *                    |
+ *                    v
+ * +----------------------------------------------------------+
+ * | FOR each starting index i (from 0 to length-1):          |
+ * |    -> The current subarray will begin from index i       |
+ * +----------------------------------------------------------+
+ *                    |
+ *                    v
+ * +----------------------------------------------------------+
+ * | FOR each ending index j (from i to length):              |
+ * |    -> This defines the end of the subarray               |
+ * |    -> Increment totalPairs                               |
+ * +----------------------------------------------------------+
+ *                    |
+ *                    v
+ * +----------------------------------------------------------+
+ * | FOR each index k (from start = i to end = j):            |
+ * |    -> Print element array[k]                             |
+ * |    -> k iterates through all elements of the current     |
+ * |       subarray to display it                             |
+ * +----------------------------------------------------------+
+ *                    |
+ *                    v
+ * +----------------------------------------------------------+
+ * | Print the total number of subarrays (totalPairs)         |
+ * +----------------------------------------------------------+
+ *                    |
+ *                    v
+ * +-----------------------------------------+
+ * |                   END                   |
+ * +-----------------------------------------+
+ */
