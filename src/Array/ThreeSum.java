@@ -4,7 +4,7 @@ import java.util.*;
 
 public class ThreeSum {
 
-    public List<List<Integer>> threeSum(int[] array) {
+    public static List<List<Integer>> threeSum(int[] array) {
         int length = array.length;  // Length of the input array
         if (array == null || length < 3) {  // If the array is invalid or too small to form a triplet
             return new ArrayList<>();
@@ -40,10 +40,8 @@ public class ThreeSum {
     public static void main(String[] args) {
         int[] array = {-1, 0, 1, 2, -1, -4};  // Example input array
 
-        ThreeSum solution = new ThreeSum();  // Create an instance of the solution
-
         // Call the threeSum method to get the triplets
-        List<List<Integer>> result = solution.threeSum(array);
+        List<List<Integer>> result = threeSum(array);
 
         System.out.println("Array = " + Arrays.toString(array));  // Print the input array
         System.out.println("Three Sum Results = " + result);  // Print the results
