@@ -42,7 +42,7 @@ public class SelectionSort {
                          |
                          v
     +--------------------------------------------+
-    | Outer Loop: For i = 0 to arr.length-2      |
+    | Outer Loop: For i = 0 to arr.length-1      |
     |   - Assume arr[i] is the smallest element  |
     |     in the unsorted portion.               |
     +--------------------------------------------+

@@ -2,12 +2,12 @@ package BasicSort;
 
 import java.util.Arrays;
 
-public class BinarySort {
+public class BubbleSort {
     public static void main(String[] args) {
         int[] arr = {10, 2, 8, 6, 5, 4, 7, 3, 9, 10};
 
         // Outer loop for multiple passes over the array
-        for (int i = 0; i < arr.length - 1; i++) {
+        for (int i = 0; i < arr.length - 2; i++) {
             // Inner loop to compare adjacent elements
             for (int j = 0; j < arr.length - 1 - i; j++) {
                 if (arr[j] > arr[j + 1]) { // Swap if elements are out of order
@@ -37,8 +37,8 @@ public class BinarySort {
                      |
                      v
     +---------------------------------------+
-    |   Outer Loop: Repeat (n-1) Passes     |
-    |   For i = 0 to arr.length-2           |
+    |   Outer Loop: Repeat (n-2) Passes     |
+    |   For i = 0 to arr.length-1-i         |
     +---------------------------------------+
                      |
                      v
