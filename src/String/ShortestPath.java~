@@ -1,0 +1,38 @@
+package String;
+
+public class ShortestPath {
+
+    public static float shortestPath(String path) {
+        int length = path.length();
+        float ans = 0;
+
+        // initial coordinates
+        int x = 0;
+        int y = 0;
+
+        for (int i = 0; i < length; i++) {
+            char ch = path.charAt(i);
+
+            if (ch == 'W') x--;
+            else if (ch == 'N') y++;
+            else if (ch == 'E') x++;
+            else y--;
+        }
+
+
+        int x2 = x*x;
+        int y2 = y*y;
+
+        ans = (float) Math.sqrt(x2+y2);
+
+        return ans;
+    }
+    public static void main(String[] args) {
+        String path = "WNEENESENNN";
+
+        float ans = shortestPath(path);
+
+        System.out.println("Provided String : "+path);
+        System.out.println("Shortest Path = " + ans);
+    }
+}
