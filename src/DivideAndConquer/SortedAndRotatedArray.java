@@ -48,3 +48,21 @@ public class SortedAndRotatedArray {
         System.out.println("ans = " + ans);
     }
 }
+
+
+//searchHelper(nums, target, si, ei)
+//1. If si > ei:
+//        return -1
+//        2. Find mid = (si + ei) / 2
+//3. If nums[mid] == target:
+//        return mid
+//4. If left half is sorted (nums[si] <= nums[mid]):
+//a. If target ∈ [nums[si], nums[mid]]:
+//Search in left half → searchHelper(nums, target, si, mid-1)
+//b. Else:
+//Search in right half → searchHelper(nums, target, mid+1, ei)
+//5. Else (Right half is sorted):
+//a. If target ∈ [nums[mid], nums[ei]]:
+//Search in right half → searchHelper(nums, target, mid+1, ei)
+//b. Else:
+//Search in left half → searchHelper(nums, target, si, mid-1)

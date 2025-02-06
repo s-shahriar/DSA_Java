@@ -93,3 +93,12 @@ public class ReversePairs {
         System.out.println("Count of Reverse pairs = " + ans);
     }
 }
+
+//
+// mergeSort(arr, si, ei)
+//    ├── Base case: If si >= ei, return 0
+//        ├── Divide the array at mid = (si + ei) / 2
+//        ├── Count reverse pairs in left half: mergeSort(arr, si, mid)
+//    ├── Count reverse pairs in right half: mergeSort(arr, mid+1, ei)
+//    ├── Merge both halves while counting reverse pairs
+//    ├── Return total count of reverse pairs
