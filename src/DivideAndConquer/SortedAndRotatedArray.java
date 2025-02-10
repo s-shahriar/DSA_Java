@@ -49,20 +49,72 @@ public class SortedAndRotatedArray {
     }
 }
 
+/*
+         +--------------------------------+
+         |            START               |
+         +--------------------------------+
+                        |
+                        v
+         +--------------------------------+
+         |  Input: Array nums, target     |
+         +--------------------------------+
+                        |
+                        v
+         +--------------------------------+
+         | Call searchHelper(nums, target,|
+         | si=0, ei=nums.length-1)        |
+         +--------------------------------+
+                        |
+                        v
+         +--------------------------------+
+         | Check if si > ei               |
+         +--------------------------------+
+                        |
+             +----------+----------+
+             |                     |
+          Yes (si > ei)          No (si ≤ ei)
+             |                     |
+             v                     v
+ +-------------------+    +-------------------+
+ | Return -1         |    | Calculate mid =   |
+ | (Target not found)|    | si + (ei - si)/2  |
+ +-------------------+    +-------------------+
+                        |
+                        v
+         +--------------------------------+
+         | Check if nums[mid] == target   |
+         +--------------------------------+
+                        |
+             +----------+----------+
+             |                     |
+          Yes (nums[mid] == target) No
+             |                     |
+             v                     v
+ +-------------------+    +-------------------+
+ | Return mid        |    | Check if nums[si] |
+ | (Target found)    |    | <= nums[mid]      |
+ +-------------------+    +-------------------+
+                        |
+                        v
+         +--------------------------------+
+         | If nums[si] <= nums[mid]:      |
+         |   Check if target is in left   |
+         |   half (nums[si] to nums[mid]) |
+         | Else:                          |
+         |   Check if target is in right  |
+         |   half (nums[mid] to nums[ei]) |
+         +--------------------------------+
+                        |
+                        v
+         +--------------------------------+
+         | Recursively call searchHelper  |
+         | on the appropriate half        |
+         +--------------------------------+
+                        |
+                        v
+         +--------------------------------+
+         |            END                 |
+         +--------------------------------+
 
-//searchHelper(nums, target, si, ei)
-//1. If si > ei:
-//        return -1
-//        2. Find mid = (si + ei) / 2
-//3. If nums[mid] == target:
-//        return mid
-//4. If left half is sorted (nums[si] <= nums[mid]):
-//a. If target ∈ [nums[si], nums[mid]]:
-//Search in left half → searchHelper(nums, target, si, mid-1)
-//b. Else:
-//Search in right half → searchHelper(nums, target, mid+1, ei)
-//5. Else (Right half is sorted):
-//a. If target ∈ [nums[mid], nums[ei]]:
-//Search in right half → searchHelper(nums, target, mid+1, ei)
-//b. Else:
-//Search in left half → searchHelper(nums, target, si, mid-1)
+*/
+

@@ -94,11 +94,65 @@ public class ReversePairs {
     }
 }
 
-//
-// mergeSort(arr, si, ei)
-//    ├── Base case: If si >= ei, return 0
-//        ├── Divide the array at mid = (si + ei) / 2
-//        ├── Count reverse pairs in left half: mergeSort(arr, si, mid)
-//    ├── Count reverse pairs in right half: mergeSort(arr, mid+1, ei)
-//    ├── Merge both halves while counting reverse pairs
-//    ├── Return total count of reverse pairs
+/*
+         +--------------------------------+
+         |            START               |
+         +--------------------------------+
+                        |
+                        v
+         +--------------------------------+
+         |  Input: Array arr              |
+         +--------------------------------+
+                        |
+                        v
+         +--------------------------------+
+         | Call mergeSort(arr, 0, n-1)    |
+         +--------------------------------+
+                        |
+                        v
+         +--------------------------------+
+         | Check if si >= ei               |
+         +--------------------------------+
+                        |
+             +----------+----------+
+             |                     |
+          Yes (si ≥ ei)          No (si < ei)
+             |                     |
+             v                     v
+ +-------------------+    +-------------------+
+ | Return 0          |    | Calculate mid =   |
+ | (Base case)       |    | si + (ei - si)/2  |
+ +-------------------+    +-------------------+
+                        |
+                        v
+         +--------------------------------+
+         | Recursively count reverse pairs|
+         | in left half: mergeSort(arr,   |
+         | si, mid)                       |
+         +--------------------------------+
+                        |
+                        v
+         +--------------------------------+
+         | Recursively count reverse pairs|
+         | in right half: mergeSort(arr,  |
+         | mid+1, ei)                     |
+         +--------------------------------+
+                        |
+                        v
+         +--------------------------------+
+         | Count reverse pairs during     |
+         | merge step: merge(arr, si, mid,|
+         | ei)                            |
+         +--------------------------------+
+                        |
+                        v
+         +--------------------------------+
+         | Return total count of reverse  |
+         | pairs                          |
+         +--------------------------------+
+                        |
+                        v
+         +--------------------------------+
+         |            END                 |
+         +--------------------------------+
+ */
