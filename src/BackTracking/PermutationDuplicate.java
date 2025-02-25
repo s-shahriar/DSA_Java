@@ -15,7 +15,7 @@ public class PermutationDuplicate {
 
     public static void backtrack(List<List<Integer>> result, int[] nums, List<Integer> temp, boolean[] used){
         // base case
-        // just one more check, if the temp is already in the result then dont add
+        // just one more check, if the temp is already in the result then don't add
         if(temp.size() == nums.length && !result.contains(temp)){
             result.add(new ArrayList<>(temp));
         }
