@@ -206,7 +206,6 @@ public class LinkedList {
         if (index == 0) {
             head = head.next;
             size--;
-            if (size == 0) tail = null;  // If list is empty, reset tail
             return;
         }
 
@@ -214,18 +213,15 @@ public class LinkedList {
         int i = 0;
 
         while (i < index - 1) {
-            if (prev == null) return;  // Prevents NullPointerException
             prev = prev.next;
             i++;
         }
-
-        if (prev == null || prev.next == null) return;  // Double-check `prev` before accessing `prev.next`
 
         if (prev.next == tail) {  // If last node is deleted, update tail
             tail = prev;
         }
 
-        prev.next = prev.next.next;  // Safe deletion
+        prev.next = prev.next.next;
         size--;
     }
 
